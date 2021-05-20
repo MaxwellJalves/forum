@@ -42,6 +42,13 @@ public class Topico{
 	public Topico() {
 		
 	}
+	
+	public Topico(String t, String m, Curso curso) {
+		this.titulo = t;
+		this.mensagem = m;
+		this.curso = curso;
+	}
+
 
 
 	@Override
