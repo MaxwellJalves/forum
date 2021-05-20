@@ -36,7 +36,7 @@ public class TopicosController {
 	@PostMapping
 	public ResponseEntity<TopicoDto> Insert(@RequestBody TopicoForm tpForm,UriComponentsBuilder uriBuilder) {
 		Topico topico = tpForm.converter(cursoRepository);
-		System.out.print(topico.getId());
+		repo.save(topico);
 		return ResponseEntity.created(uriBuilder.path("topicos/{id}").buildAndExpand(topico.getId()).toUri()).body(new TopicoDto(topico));
 	}
 	
